@@ -27,14 +27,6 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all project cards
-document.querySelectorAll('.project-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(card);
-});
-
 // Dynamic typing effect for hero section
 const heroTitle = document.querySelector('.hero-content h1');
 if (heroTitle) {
@@ -54,49 +46,68 @@ if (heroTitle) {
     setTimeout(typeWriter, 500);
 }
 
-// Project filtering functionality
+// Project filtering functionality - Fixed version
 document.addEventListener('DOMContentLoaded', function() {
-    const categoryButtons = document.querySelectorAll('.category-btn');
-    const projectCards = document.querySelectorAll('.project-card');
+    // Wait a bit for all elements to be ready
+    setTimeout(() => {
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const projectCards = document.querySelectorAll('.project-card');
 
-    categoryButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active class from all buttons
-            categoryButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
-            button.classList.add('active');
+        console.log('Found buttons:', categoryButtons.length);
+        console.log('Found cards:', projectCards.length);
 
-            const selectedCategory = button.getAttribute('data-category');
+        // Initialize scroll observer for all cards
+        projectCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
 
-            projectCards.forEach(card => {
-                if (selectedCategory === 'all') {
-                    card.classList.remove('hidden');
-                    card.style.display = 'block';
-                } else if (card.getAttribute('data-category') === selectedCategory) {
-                    card.classList.remove('hidden');
-                    card.style.display = 'block';
-                } else {
-                    card.classList.add('hidden');
-                    card.style.display = 'none';
-                }
-            });
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Button clicked:', button.getAttribute('data-category'));
 
-            // Re-trigger scroll animations for visible cards
-            setTimeout(() => {
+                // Remove active class from all buttons
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const selectedCategory = button.getAttribute('data-category');
+
                 projectCards.forEach(card => {
-                    if (!card.classList.contains('hidden')) {
-                        observer.observe(card);
+                    const cardCategory = card.getAttribute('data-category');
+                    console.log('Card category:', cardCategory, 'Selected:', selectedCategory);
+
+                    if (selectedCategory === 'all') {
+                        card.classList.remove('hidden');
+                        card.style.display = 'block';
+                    } else if (cardCategory === selectedCategory) {
+                        card.classList.remove('hidden');
+                        card.style.display = 'block';
+                    } else {
+                        card.classList.add('hidden');
+                        card.style.display = 'none';
                     }
                 });
-            }, 100);
+
+                // Re-trigger scroll animations for visible cards
+                setTimeout(() => {
+                    projectCards.forEach(card => {
+                        if (!card.classList.contains('hidden')) {
+                            observer.observe(card);
+                        }
+                    });
+                }, 100);
+            });
         });
-    });
+    }, 100);
 });
 
 // Enhanced notebook link tracking (optional analytics)
 document.querySelectorAll('a[href*="nbviewer"]').forEach(link => {
     link.addEventListener('click', function() {
-        // You can add analytics tracking here if needed
         console.log('Notebook viewed:', this.href);
     });
 });
