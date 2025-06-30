@@ -36,99 +36,237 @@
         <section id="about" class="about">
             <div class="container">
                 <h2>About Me</h2>
-                <p>I'm an electrical engineer turned pre-med student turned software engineer. I create scalable applications using modern cloud technologies. I enjoy working with Python, JavaScript, and Google Cloud Platform among many other technologies. I love continually learning and understanding how technologies work.</p>
+                <p>I'm an electrical engineer turned pre-med student turned software engineer. I create scalable applications using modern cloud technologies. I enjoy working with Python, JavaScript, and Google Cloud Platform among many other software tools. I love continually learning and understanding how technologies work.</p>
             </div>
         </section>
 
-        <section id="projects" class="projects">
-            <div class="container">
-                <h2>Featured Projects</h2>
-                <div class="projects-grid">
-                    
-                    <!-- Weather Choice App - Your main project! -->
-                    <div class="project-card featured">
-                        <div class="project-image">
-                            <i class="fas fa-cloud-sun project-icon"></i>
-                        </div>
-                        <div class="project-content">
-                            <h3>Weather Choice</h3>
-                            <p>A comprehensive weather analysis application that helps users find locations meeting specific temperature, wind, and precipitation criteria.</p>
-                            
-                            <div class="tech-stack">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Flask</span>
-                                <span class="tech-tag">Google Cloud</span>
-                                <span class="tech-tag">PostgreSQL</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">RestAPI</span>
-                            </div>
-                            
-                            <div class="project-features">
-                                <h4>Key Features:</h4>
-                                <ul>
-                                    <li>Real time weather data collection via OpenWeatherMap API</li>
-                                    <li>Interactive Google Maps visualization</li>
-                                    <li>Advanced filtering by temperature, wind speed, and precipitation</li>
-                                    <li>Automated data collection and analysis</li>
-                                    <li>Serverless architecture on Google Cloud Run</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="project-links">
-                                <a href="https://weather-frontend-182603663031.us-central1.run.app" class="btn btn-primary" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i> Try Live App
-                                </a>
-                                <a href="https://github.com/nickStanisic/weather-choice-frontend" class="btn btn-secondary" target="_blank">
-                                    <i class="fab fa-github"></i> View Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Add more projects here -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-code project-icon"></i>
-                        </div>
-                        <div class="project-content">
-                            <h3>Future Project</h3>
-                            <p>Coming soon - another exciting project!</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">Node.js</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>Get In Touch</h2>
-                <p>If you want to work together, connect with me!</p>
-                <div class="contact-links">
-                    <a href="mailto:nicholasstanisic@gmail.com" class="contact-link">
-                        <i class="fas fa-envelope"></i> Email
-                    </a>
-                    <a href="https://linkedin.com/in/nicholas-stanisic" class="contact-link" target="_blank">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/nickStanisic" class="contact-link" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Nick Stanisic. Built and deployed on GitHub Pages.</p>
+       <!-- Replace your existing projects section with this -->
+<section id="projects" class="projects">
+    <div class="container">
+        <h2>Projects</h2>
+        
+        <!-- Project Category Navigation -->
+        <div class="project-categories">
+            <button class="category-btn active" data-category="all">All Projects</button>
+            <button class="category-btn" data-category="fullstack">Full Stack</button>
+            <button class="category-btn" data-category="ml">Machine Learning</button>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
-</body>
-</html>
+        <div class="projects-grid">
+            
+            <!-- FULL STACK PROJECTS -->
+            <div class="project-card featured fullstack" data-category="fullstack">
+                <div class="project-image">
+                    <i class="fas fa-cloud-sun project-icon"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Weather Choice</h3>
+                    <p>A comprehensive weather analysis application that helps users find locations meeting specific temperature, wind, and precipitation criteria using microservice architecture.</p>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">Google Cloud</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">RestAPI</span>
+                    </div>
+                    
+                    <div class="project-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>Microservice architecture processing 1000's of data points</li>
+                            <li>Real-time weather data collection via OpenWeatherMap API</li>
+                            <li>Interactive Google Maps visualization</li>
+                            <li>Postgres DB hosted with Google Cloud Platform</li>
+                            <li>Deployed with Google Cloud Run jobs and scheduled services</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="https://weather-frontend-182603663031.us-central1.run.app" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Live App
+                        </a>
+                        <a href="https://github.com/nickStanisic/weather-choice-frontend" class="btn btn-secondary" target="_blank">
+                            <i class="fab fa-github"></i> Frontend Code
+                        </a>
+                        <a href="https://github.com/nickStanisic/weather-choice" class="btn btn-secondary" target="_blank">
+                            <i class="fab fa-github"></i> Backend Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cycling Data Visualization App -->
+            <div class="project-card fullstack" data-category="fullstack">
+                <div class="project-image">
+                    <i class="fas fa-bicycle project-icon"></i>
+                </div>
+                <div class="project-content">
+                    <h3>MyDataArt - Cycling Wheel Visualizer</h3>
+                    <p>Flask web application that transforms cycling data into beautiful wheel art visualizations with secure file handling and real-time processing.</p>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">HTML/CSS</span>
+                        <span class="tech-tag">Data Visualization</span>
+                        <span class="tech-tag">Security</span>
+                    </div>
+                    
+                    <div class="project-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>Secure file upload and validation (.fit, .csv files)</li>
+                            <li>Custom wheel art generation from cycling data</li>
+                            <li>Rate limiting and security headers</li>
+                            <li>Automated file cleanup and error handling</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="#" class="btn btn-secondary" target="_blank">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MACHINE LEARNING PROJECTS -->
+            <div class="project-card featured ml" data-category="ml">
+                <div class="project-image">
+                    <i class="fas fa-football-ball project-icon"></i>
+                </div>
+                <div class="project-content">
+                    <h3>NFL Big Data Bowl 2025</h3>
+                    <p>Comprehensive machine learning analysis of 10GB of NFL tracking data using clustering algorithms to identify player performance patterns and post-snap metrics.</p>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">K-Means</span>
+                        <span class="tech-tag">PCA</span>
+                        <span class="tech-tag">Data Analysis</span>
+                    </div>
+                    
+                    <div class="project-features">
+                        <h4>Analysis Pipeline:</h4>
+                        <ul>
+                            <li>Extensive exploratory data analysis on 10GB dataset</li>
+                            <li>Feature engineering and dimensionality reduction with PCA</li>
+                            <li>K-Means and hierarchical clustering implementation</li>
+                            <li>Player performance pattern analysis</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="https://nbviewer.org/github/nickStanisic/Big-Data-Bowl/blob/main/exploratory_analysis.ipynb" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-chart-line"></i> EDA Notebook
+                        </a>
+                        <a href="https://nbviewer.org/github/nickStanisic/Big-Data-Bowl/blob/main/clustering_analysis.ipynb" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-project-diagram"></i> Clustering Analysis
+                        </a>
+                        <a href="https://github.com/nickStanisic/Big-Data-Bowl" class="btn btn-secondary" target="_blank">
+                            <i class="fab fa-github"></i> Full Repository
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deep Learning Projects -->
+            <div class="project-card ml" data-category="ml">
+                <div class="project-image">
+                    <i class="fas fa-brain project-icon"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Deep Learning Portfolio</h3>
+                    <p>Collection of neural network implementations including RNNs, CNNs, and CycleGAN for image, text, and artwork generation tasks.</p>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">CNNs</span>
+                        <span class="tech-tag">RNNs</span>
+                        <span class="tech-tag">GANs</span>
+                    </div>
+                    
+                    <div class="project-features">
+                        <h4>Model Implementations:</h4>
+                        <ul>
+                            <li>Recurrent Neural Networks for sequence prediction</li>
+                            <li>Convolutional Neural Networks for image classification</li>
+                            <li>CycleGAN for style transfer and artwork generation</li>
+                            <li>Text generation and image synthesis projects</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="https://nbviewer.org/github/nickStanisic/deep-learning-portfolio/blob/main/cnn_analysis.ipynb" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-image"></i> CNN Notebook
+                        </a>
+                        <a href="https://nbviewer.org/github/nickStanisic/deep-learning-portfolio/blob/main/rnn_analysis.ipynb" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-clock"></i> RNN Notebook
+                        </a>
+                        <a href="https://nbviewer.org/github/nickStanisic/deep-learning-portfolio/blob/main/cyclegan_art.ipynb" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-palette"></i> CycleGAN Art
+                        </a>
+                        <a href="https://github.com/nickStanisic/deep-learning-portfolio" class="btn btn-secondary" target="_blank">
+                            <i class="fab fa-github"></i> Repository
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ML Tools & Algorithms -->
+            <div class="project-card ml" data-category="ml">
+                <div class="project-image">
+                    <i class="fas fa-cogs project-icon"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Machine Learning Toolkit</h3>
+                    <p>Implementation of supervised learning algorithms including decision trees, random forests, SVMs, and regression models with comprehensive analysis.</p>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">Decision Trees</span>
+                        <span class="tech-tag">Random Forest</span>
+                        <span class="tech-tag">SVM</span>
+                    </div>
+                    
+                    <div class="project-features">
+                        <h4>Algorithm Implementations:</h4>
+                        <ul>
+                            <li>Decision tree classification with pruning techniques</li>
+                            <li>Random forest ensemble methods</li>
+                            <li>Support Vector Machine optimization</li>
+                            <li>Linear and polynomial regression analysis</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="https://nbviewer.org/github/nickStanisic/ml-toolkit/blob/main/decision_trees.ipynb" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-tree"></i> Decision Trees
+                        </a>
+                        <a href="https://nbviewer.org/github/nickStanisic/ml-toolkit/blob/main/ensemble_methods.ipynb" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-layer-group"></i> Ensemble Methods
+                        </a>
+                        <a href="https://nbviewer.org/github/nickStanisic/ml-toolkit/blob/main/svm_analysis.ipynb" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-vector-square"></i> SVM Analysis
+                        </a>
+                        <a href="https://github.com/nickStanisic/ml-toolkit" class="btn btn-secondary" target="_blank">
+                            <i class="fab fa-github"></i> Repository
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

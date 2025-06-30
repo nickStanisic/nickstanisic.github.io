@@ -53,3 +53,50 @@ if (heroTitle) {
     // Start typing effect after page loads
     setTimeout(typeWriter, 500);
 }
+
+// Project filtering functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            const selectedCategory = button.getAttribute('data-category');
+
+            projectCards.forEach(card => {
+                if (selectedCategory === 'all') {
+                    card.classList.remove('hidden');
+                    card.style.display = 'block';
+                } else if (card.getAttribute('data-category') === selectedCategory) {
+                    card.classList.remove('hidden');
+                    card.style.display = 'block';
+                } else {
+                    card.classList.add('hidden');
+                    card.style.display = 'none';
+                }
+            });
+
+            // Re-trigger scroll animations for visible cards
+            setTimeout(() => {
+                projectCards.forEach(card => {
+                    if (!card.classList.contains('hidden')) {
+                        observer.observe(card);
+                    }
+                });
+            }, 100);
+        });
+    });
+});
+
+// Enhanced notebook link tracking (optional analytics)
+document.querySelectorAll('a[href*="nbviewer"]').forEach(link => {
+    link.addEventListener('click', function() {
+        // You can add analytics tracking here if needed
+        console.log('Notebook viewed:', this.href);
+    });
+});
