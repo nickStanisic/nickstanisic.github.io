@@ -102,6 +102,12 @@ nav {
     font-weight: 500;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    font-size: 0.9rem;
+    min-width: fit-content;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    opacity: 1;
 }
 
 .btn-primary {
@@ -147,6 +153,32 @@ h2 {
     color: #333;
 }
 
+/* Project Categories */
+.project-categories {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #667eea;
+    background: transparent;
+    color: #667eea;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background: #667eea;
+    color: white;
+}
+
 /* Projects Grid */
 .projects-grid {
     display: grid;
@@ -160,13 +192,17 @@ h2 {
     border-radius: 15px;
     padding: 2rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, all 0.5s ease;
     border: 2px solid transparent;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.project-card.hidden {
+    display: none;
 }
 
 .project-card.featured {
@@ -178,6 +214,30 @@ h2 {
 .project-card.featured h3,
 .project-card.featured h4 {
     color: white;
+}
+
+/* ML project specific styling */
+.project-card.ml .project-icon {
+    color: #28a745;
+}
+
+.project-card.ml.featured {
+    background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+.project-card.ml .tech-tag {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.project-card.ml.featured .tech-tag {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* Full stack project styling */
+.project-card.fullstack .project-icon {
+    color: #667eea;
 }
 
 .project-image {
@@ -250,6 +310,50 @@ h2 {
     flex-wrap: wrap;
 }
 
+.project-links .btn {
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+}
+
+/* Button styling for different project card types */
+
+/* Regular project cards */
+.project-card .btn-secondary {
+    background: transparent;
+    color: #667eea;
+    border-color: #667eea;
+}
+
+.project-card .btn-secondary:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* ML project cards - green styling */
+.project-card.ml .btn-primary {
+    background: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+.project-card.ml .btn-primary:hover {
+    background: transparent;
+    color: #28a745;
+    border-color: #28a745;
+}
+
+.project-card.ml .btn-secondary {
+    background: transparent;
+    color: #28a745;
+    border-color: #28a745;
+}
+
+.project-card.ml .btn-secondary:hover {
+    background: #28a745;
+    color: white;
+}
+
+/* Featured cards */
 .project-card.featured .btn-primary {
     background: white;
     color: #667eea;
@@ -265,6 +369,28 @@ h2 {
     background: transparent;
     color: white;
     border-color: white;
+}
+
+.project-card.featured .btn-secondary:hover {
+    background: white;
+    color: #667eea;
+}
+
+.project-card.ml.featured .btn-secondary:hover {
+    background: white;
+    color: #28a745;
+}
+
+/* Notebook link styling */
+.btn.btn-primary i.fa-chart-line,
+.btn.btn-primary i.fa-project-diagram,
+.btn.btn-primary i.fa-image,
+.btn.btn-primary i.fa-clock,
+.btn.btn-primary i.fa-palette,
+.btn.btn-primary i.fa-tree,
+.btn.btn-primary i.fa-layer-group,
+.btn.btn-primary i.fa-vector-square {
+    color: inherit;
 }
 
 /* Contact */
@@ -320,74 +446,4 @@ footer {
         flex-direction: column;
         align-items: center;
     }
-}
-
-.project-categories {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-    flex-wrap: wrap;
-}
-
-.category-btn {
-    padding: 0.75rem 1.5rem;
-    border: 2px solid #667eea;
-    background: transparent;
-    color: #667eea;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.category-btn:hover,
-.category-btn.active {
-    background: #667eea;
-    color: white;
-}
-
-/* Project filtering */
-.project-card {
-    transition: all 0.5s ease;
-}
-
-.project-card.hidden {
-    display: none;
-}
-
-/* ML project specific styling */
-.project-card.ml .project-icon {
-    color: #28a745;
-}
-
-.project-card.ml.featured {
-    background: linear-gradient(135deg, #28a745, #20c997);
-}
-
-.project-card.ml .tech-tag {
-    background: rgba(40, 167, 69, 0.1);
-    color: #28a745;
-}
-
-.project-card.ml.featured .tech-tag {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-}
-
-/* Full stack project styling */
-.project-card.fullstack .project-icon {
-    color: #667eea;
-}
-
-/* Notebook link styling */
-.btn.btn-primary i.fa-chart-line,
-.btn.btn-primary i.fa-project-diagram,
-.btn.btn-primary i.fa-image,
-.btn.btn-primary i.fa-clock,
-.btn.btn-primary i.fa-palette,
-.btn.btn-primary i.fa-tree,
-.btn.btn-primary i.fa-layer-group,
-.btn.btn-primary i.fa-vector-square {
-    color: inherit;
 }
